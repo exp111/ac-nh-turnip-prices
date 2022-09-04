@@ -342,8 +342,36 @@ const calculateOutput = function (data, first_buy, previous_pattern) {
 
   update_chart(data, analyzed_possibilities);
 
+  update_holdback(data, analyzed_possibilities);
+
   update_sellnow(data, analyzed_possibilities);
 
+};
+
+
+const update_holdback = function(prices, patterns) {
+  var money = $("#hold_current")[0];
+  var percentage = $("#hold_percentage")[0];
+  money = parseInt(money.value || '');
+  percentage = parseInt(percentage.value || '');
+
+  var label = "---";
+  if (!isNaN(money) && !isNaN(percentage) && patterns.length > 1)
+  {
+    // clamp percentage to 100% + transform
+    percentage = Math.min(percentage, 100) / 100;
+    overallMin = patterns[0].weekGuaranteedMinimum; // patterns[0] is the overall line
+    curPrice = prices[0];
+    pricePercentage = overallMin / curPrice;
+    // MaxMinPriceDiffPercentage * MoneyWeSpend (Worst Case income) + MoneyWeKeep = MoneyWeHave * AcceptablePercentage
+    // => then replace MoneyWeSpend with our current money and resolve to how much money we keep
+    // calculate how much berries we should keep; if calc is lower than 0, we can spend all
+    var output = Math.max((money * percentage) - (money * pricePercentage), 0);
+    label = `${output} ${i18next.t("general.berries")}`
+  }
+
+  // update
+  $("#holdbackLabel").html(label);
 };
 
 const update_sellnow = function(prices, patterns) {

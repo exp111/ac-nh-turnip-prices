@@ -1,6 +1,7 @@
 {
   "general": {
-    "daisy-mae": "Jorna"
+    "daisy-mae": "Jorna",
+    "berries": "Sternies"
   },
   "welcome": {
     "salutation": "Hallo und Willkommen bei der <b>Turnip Prophet</b> App auf deinem Nook Phone.",
@@ -12,6 +13,11 @@
     "description": "Kaufst du zum ersten Mal Rüben von Jorna auf deiner Insel? <i>(Dies beeinflusst dein Verkaufsmuster)</i>",
     "yes": "Ja",
     "no": "Nein"
+  },
+  "holdback":{
+    "title": "Holdback",
+    "current": "Derzeitiges Geld",
+    "percentage": "Verlustsatz"
   },
   "patterns": {
     "title": "Vorheriges Verkaufsmuster",
@@ -62,6 +68,7 @@
     "to": "bis",
     "minimum": "Garantiertes Minimum",
     "maximum": "Potentielles Maximum",
+    "holdback": "Geld behalten",
     "chart": {
       "input": "Eingegebener Preis",
       "minimum": "Garantiertes Minimum",

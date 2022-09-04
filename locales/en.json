@@ -1,6 +1,7 @@
 {
   "general": {
-    "daisy-mae": "Daisy Mae"
+    "daisy-mae": "Daisy Mae",
+    "berries": "Berries"
   },
   "welcome": {
     "salutation": "Hello, and welcome to the <b>Turnip Prophet</b> app on your Nook Phone.",
@@ -12,6 +13,11 @@
     "description": "Is this the first time a resident is buying turnips from Daisy Mae on <b>your own</b> island?<i>(This affects your pattern)</i>",
     "yes": "Yes",
     "no": "No"
+  },
+  "holdback":{
+    "title": "Holdback",
+    "current": "Current Money",
+    "percentage": "Loss Percentage"
   },
   "patterns": {
     "title": "Previous Pattern",
@@ -67,6 +73,7 @@
       "minimum": "Guaranteed Minimum",
       "maximum": "Potential Maximum"
     },
+    "holdback": "Keep Money",
     "better": {
       "title": "Should I sell now?",
       "cant": "Can't sell now",

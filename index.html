@@ -56,12 +56,12 @@
 
 <body>
 
-  <div class="dialog-box">
+  <!--<div class="dialog-box">
     <h2 class="dialog-box__name" data-i18n="general.daisy-mae"></h2>
     <p data-i18n="[html]welcome.salutation"></p>
     <p data-i18n="welcome.description"></p>
     <p data-i18n="[html]welcome.conclusion"></p>
-  </div>
+  </div>-->
 
   <div class="nook-phone">
     <h1>Turnip Prophet</h1>
@@ -82,8 +82,6 @@
     </div>
 
     <div class="nook-phone-center">
-
-
 
       <form class="input__form">
         <div class="form__row">
@@ -201,13 +199,19 @@
             </div>
           </div>
         </div>
-        <input id="permalink-input" type="text" readOnly />
-        <div id="permalink-btn" class="button permalink">
-          <span data-i18n="prices.copy-permalink"></span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" class="svg-inline--fa fa-copy fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path>
-          </svg>
+
+        <div class="form__row">
+          <h6 data-i18n="holdback.title"></h6>
+          <div class="input__group">
+            <label data-i18n="holdback.current" for="hold_current"></label>
+            <input type="number" pattern="\d*" id="hold_current" placeholder="..." />
+          </div>
+          <div class="input__group">
+            <label data-i18n="holdback.percentage" for="hold_percentage"></label>
+            <input type="number" pattern="\d*" id="hold_percentage" placeholder="...%" value="50" />
+          </div>
         </div>
+
         <button type="button" id="reset" class="button button--reset" name="action" data-i18n="prices.reset"></button>
       </form>
 
@@ -279,6 +283,11 @@
           </thead>
           <tbody id="output"></tbody>
         </table>
+      </div>
+
+      <div class="form__row">
+        <h6 data-i18n="output.holdback"></h6>
+          <label id="holdbackLabel"></label>
       </div>
 
       <div class="form__row">
